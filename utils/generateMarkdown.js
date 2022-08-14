@@ -47,7 +47,7 @@ SOFTWARE.`,
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-  return `# ${answers.title} ${renderLicenseSection(
+  return `# ${answers.project} ${renderLicenseSection(
     answers.license,
     answers.year,
     answers.full_name
