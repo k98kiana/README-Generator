@@ -23,7 +23,7 @@ const questions = [
     {//DESCRIPTION-PROBLEM SOLVING
         type:"input",
         message: "What problem is this project solving?",
-        name: "problem-solve",
+        name: "problem_solve",
     },
     {//DESCRIPTION-LEARN
         type:"input",
@@ -40,39 +40,44 @@ const questions = [
         message: "What are the steps to use the project?",
         name: "usage",
     },
+    {
+        type:"confirm",
+        message: "Do you want to include a license?",
+        name: "license",
+    },
     {//ADDING TO LICENSE
         type:"input",
         message: "What is the current year?",
         name: "year",
     },
-    {
+    {//NAME
         type:"input",
         message: "Please state your full name",
-        name: "full-name",
+        name: "full_name",
     },
-    {
+    {//CONTRIBUTOR CONFIRM
         type:"confirm",
         message: "Did anyone help you build this project?",
         name: "contributor",
     },
-    {
+    {//CONTRIBUTOR NAME
         type:"input",
         message: "What is the contributor's name?",
-        name: "contributer-name",
+        name: "contributername",
         when: (answers) => answers.contributor === true,
     },
-    {
+    {//CONTRIBUTOR LINK
         type:"input",
         message: "Please provide your contibutor's Github link.",
-        name: "contributor-git",
+        name: "contributorgit",
         when: (answers) => answers.contributor === true,
     },
-    {
+    {// USERNAME
         type:"input",
         message: "Please provide your Github username.",
-        name: "git-user",
+        name: "gituser",
     },
-    {
+    {// EMAIL
         type:"input",
         message: "Please provide your email.",
         name: "email",
@@ -81,7 +86,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(answers) {
-    fs.writeToFile("README.md", generateMarkdown(answers), (err) =>
+    fs.writeFile("README.md", generateMarkdown(answers), (err) =>
      err ? console.log (err) : console.log("Written to File!")
     );
 }
