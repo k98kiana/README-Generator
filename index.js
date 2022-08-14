@@ -63,12 +63,12 @@ const questions = [
     {//CONTRIBUTOR NAME
         type:"input",
         message: "What is the contributor's name?",
-        name: "contributername",
+        name: "contributorname",
         when: (answers) => answers.contributor === true,
     },
     {//CONTRIBUTOR LINK
         type:"input",
-        message: "Please provide your contibutor's Github link.",
+        message: "Please provide your contibutor's Github name.",
         name: "contributorgit",
         when: (answers) => answers.contributor === true,
     },
