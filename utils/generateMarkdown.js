@@ -58,6 +58,7 @@ function generateMarkdown(answers) {
 *[Description](#description)
 *[Installation](#insallation)
 *[Usage](#usage)
+*[Contributor](#contributor)
 *[Questions](#questions)
 
 ## Description
@@ -70,6 +71,10 @@ ${answers.installation}
 
 ## Usage
 ${answers.usage}
+
+## Contributor
+${answers.contributor}
+[${answers.contributorname}] (https://github.com/${answers.contributorgit})
 
 ## Questions
 If you have any questions, please contact me below:
