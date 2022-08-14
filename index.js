@@ -2,7 +2,11 @@
 // THEN a high-quality, professional README.md is generated with the title of my project and sections 
 // entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 
+
 // TODO: Include packages needed for this application
+const fs = require("fs");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -55,11 +59,13 @@ const questions = [
         type:"input",
         message: "What is the contributor's name?",
         name: "contributer-name",
+        when: (answers) => answers.contributor === true,
     },
     {
         type:"input",
         message: "Please provide your contibutor's Github link.",
         name: "contributor-git",
+        when: (answers) => answers.contributor === true,
     },
     {
         type:"input",
@@ -74,10 +80,19 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(answers) {
+    fs.writeToFile("README.md", generateMarkdown(answers), (err) =>
+     err ? console.log (err) : console.log("Written to File!")
+    );
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+    console.log(answers);
+    writeToFile(answers);
+});
+}
 
 // Function call to initialize app
 init();
