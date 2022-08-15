@@ -19,7 +19,8 @@
 ## Usage
  After the files from my repo are pulled to the respective coding program, first ensure your terminal is located in the matching location. You will then run "node + index.js" files and answer all prompt questions. The answers will be pulled into a README file.  year: '2022',
 
- ![Video](/assets/README%20tutorial.webm)
+ ![Video of Prompts](/assets/README%20tutorial.webm)
+ ![Video of README](/assets/README%20preview.webm)
 
 ## Contributor
 [Kiana Munoz] (https://github.com/k98kiana)
